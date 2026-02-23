@@ -64,22 +64,27 @@
                     class="py-2 w-20 h-8 rounded-md text-xs font-semibold text-gray-400 bg-white">Rejected</button>
             </div>
         </Section>
+        <!-- empty section for filtered card -->
+        <section id="filteredCard">
+
+        </section>
+
 
         <!-- Card Section -->
         <!-- ID: allCards -->
         <section id="allCards" class=" grid gap-4 p-4">
             <!-- Card-01 -->
             <!-- Description-div-forCard -->
-            <div class="flex justify-between  bg-white p-4 rounded-md">
+            <div class="card flex justify-between  bg-white p-4 rounded-md">
                 <div>
                     <!-- div-1 :job description & company name -->
                     <div class="p-4">
-                        <h1 class="text-[18px] font-semibold text-[#002c5c]">Mobile First Corp</h1>
-                        <p class="text-[16px] font-normal text-[#64748B]">React Native Developer</p>
+                        <h1 class="companyName text-[18px] font-semibold text-[#002c5c]">Mobile First Corp</h1>
+                        <p class="designation text-[16px] font-normal text-[#64748B]">React Native Developer</p>
                     </div>
                     <!-- div-02:place & salary -->
                     <div>
-                        <p class="p-4 text-sm font-normal text-[#64748B]">
+                        <p class="place p-4 text-sm font-normal text-[#64748B]">
                             Los Angeles, CA
                             <span class="mx-2">.</span>
                             Part-time
@@ -91,9 +96,10 @@
                     <div class="px-4">
                         <!-- ID; currentStatus -->
                         <button id="currentStatus"
-                            class="px-4 w-[122px] h-12  text-sm font-normal text-[#002c5c] bg-[#EEF4FF]">NOT
+                            class="currentStatus px-4 w-[122px] h-12  text-sm font-normal text-[#002c5c] bg-[#EEF4FF]">NOT
                             APPLIED</button>
-                        <p class="mt-2 text-sm text-[#002c5c]">Create stunning web experiences for high-profile clients.
+                        <p class="description mt-2 text-sm text-[#002c5c]">Create stunning web experiences for
+                            high-profile clients.
                             Must have portfolio and
                             experience with modern web design trends.</p>
                     </div>
@@ -101,114 +107,361 @@
                     <div class="flex p-4 gap-4">
                         <!-- ID: press-interviewed-btn -->
                         <BUtton id="press-interviewed-btn"
-                            class="px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#10B981] border border-[#10B981]">INTERVIEW</BUtton>
+                            class="pressInterviewedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#10B981] border border-[#10B981]">INTERVIEW</BUtton>
 
                         <!-- ID:press-rejected-btn -->
                         <BUtton id="press-rejected-btn"
-                            class="px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#EF4444] border border-[#EF4444]">REJECTED</BUtton>
+                            class="pressRejectedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#EF4444] border border-[#EF4444]">REJECTED</BUtton>
 
                     </div>
                 </div>
 
                 <!-- Delete-card-div -->
                 <div>
-                    <button id="delete-btn"><img src="./images/Delete.png" alt=""></button>
+                    <button id="delete-btn" class="deleteBtn"><img src="./images/Delete.png" alt=""></button>
                 </div>
             </div>
 
             <!-- Card-02 -->
             <!-- Description-div-forCard -->
-            <div class="flex justify-between bg-white p-4 rounded-md">
+            <div class="card flex justify-between  bg-white p-4 rounded-md">
                 <div>
                     <!-- div-1 :job description & company name -->
                     <div class="p-4">
-                        <h1 class="text-[18px] font-semibold text-[#002c5c]">WebFlow Agency</h1>
-                        <p class="text-[16px] font-normal text-[#64748B]">Web Designer & Developer</p>
+                        <h1 class="companyName text-[18px] font-semibold text-[#002c5c]">WebFlow Agency</h1>
+                        <p class="designation text-[16px] font-normal text-[#64748B]">Web Designer & Developer</p>
                     </div>
                     <!-- div-02:place & salary -->
                     <div>
-                        <p class="p-4 text-sm font-normal text-[#64748B]">
-                            Los Angeles, CA
+                        <p class="place p-4 text-sm font-normal text-[#64748B]">
+                            Remote
                             <span class="mx-2">.</span>
-                            full-time
+                            Part-time
                             <span>.</span>
-                            $20,000 - $120,000
+                            $180,000 - $120,000
                         </p>
                     </div>
                     <!-- div-03: current status- interviewed or rejected -->
                     <div class="px-4">
                         <!-- ID; currentStatus -->
                         <button id="currentStatus"
-                            class="px-4 w-[122px] h-12  text-sm font-normal text-[#002c5c] bg-[#EEF4FF]">NOT
+                            class="currentStatus px-4 w-[122px] h-12  text-sm font-normal text-[#002c5c] bg-[#EEF4FF]">NOT
                             APPLIED</button>
-                        <p class="mt-2 text-sm text-[#002c5c]">Build cross-platform mobile applications using React
-                            Native. Work on products used by millions of users worldwide.</p>
+                        <p class="description mt-2 text-sm text-[#002c5c]">Build cross-platform mobile applications
+                            using React Native. Work on products used by millions of users worldwide.</p>
                     </div>
                     <!-- div-04: press btn,interviewed or rejected  -->
                     <div class="flex p-4 gap-4">
                         <!-- ID: press-interviewed-btn -->
                         <BUtton id="press-interviewed-btn"
-                            class="px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#10B981] border border-[#10B981]">INTERVIEW</BUtton>
+                            class="pressInterviewedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#10B981] border border-[#10B981]">INTERVIEW</BUtton>
 
                         <!-- ID:press-rejected-btn -->
                         <BUtton id="press-rejected-btn"
-                            class="px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#EF4444] border border-[#EF4444]">REJECTED</BUtton>
+                            class="pressRejectedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#EF4444] border border-[#EF4444]">REJECTED</BUtton>
 
                     </div>
                 </div>
 
                 <!-- Delete-card-div -->
                 <div>
-                    <button id="delete-btn"><img src="./images/Delete.png" alt=""></button>
+                    <button id="delete-btn" class="deleteBtn"><img src="./images/Delete.png" alt=""></button>
                 </div>
             </div>
 
             <!-- Card-03 -->
             <!-- Description-div-forCard -->
-            <div class="flex justify-between bg-white p-4 rounded-md">
+            <div class="card flex justify-between  bg-white p-4 rounded-md">
                 <div>
                     <!-- div-1 :job description & company name -->
                     <div class="p-4">
-                        <h1 class="text-[18px] font-semibold text-[#002c5c]">DataViz Solutions</h1>
-                        <p class="text-[16px] font-normal text-[#64748B]">Data Visualization Specialist</p>
+                        <h1 class="companyName text-[18px] font-semibold text-[#002c5c]">DataViz Solutions</h1>
+                        <p class="designation text-[16px] font-normal text-[#64748B]">Data Visualization Specialist</p>
                     </div>
                     <!-- div-02:place & salary -->
                     <div>
-                        <p class="p-4 text-sm font-normal text-[#64748B]">
-                            Seattle, WA
+                        <p class="place p-4 text-sm font-normal text-[#64748B]">
+                            Boston, MA
                             <span class="mx-2">.</span>
-                            full-time
+                            Full-time
                             <span>.</span>
-                            $140,000 - $190,000
+                            $180,000 - $120,000
                         </p>
                     </div>
                     <!-- div-03: current status- interviewed or rejected -->
                     <div class="px-4">
                         <!-- ID; currentStatus -->
                         <button id="currentStatus"
-                            class="px-4 w-[122px] h-12  text-sm font-normal text-[#002c5c] bg-[#EEF4FF]">NOT
+                            class="currentStatus px-4 w-[122px] h-12  text-sm font-normal text-[#002c5c] bg-[#EEF4FF]">NOT
                             APPLIED</button>
-                        <p class="mt-2 text-sm text-[#002c5c]">Design and maintain scalable backend systems using Python
-                            and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+                        <p class="description mt-2 text-sm text-[#002c5c]">Transform complex data into compelling
+                            visualizations. Required skills: D3.js, React, and strong analytical thinking.
+                        </p>
                     </div>
                     <!-- div-04: press btn,interviewed or rejected  -->
                     <div class="flex p-4 gap-4">
                         <!-- ID: press-interviewed-btn -->
                         <BUtton id="press-interviewed-btn"
-                            class="px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#10B981] border border-[#10B981]">INTERVIEW</BUtton>
+                            class="pressInterviewedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#10B981] border border-[#10B981]">INTERVIEW</BUtton>
 
                         <!-- ID:press-rejected-btn -->
                         <BUtton id="press-rejected-btn"
-                            class="px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#EF4444] border border-[#EF4444]">REJECTED</BUtton>
+                            class="pressRejectedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#EF4444] border border-[#EF4444]">REJECTED</BUtton>
 
                     </div>
                 </div>
 
                 <!-- Delete-card-div -->
                 <div>
-                    <button id="delete-btn"><img src="./images/Delete.png" alt=""></button>
+                    <button id="delete-btn" class="deleteBtn"><img src="./images/Delete.png" alt=""></button>
                 </div>
             </div>
+
+            <!-- Card-04 -->
+            <!-- Description-div-forCard -->
+            <div class="card flex justify-between  bg-white p-4 rounded-md">
+                <div>
+                    <!-- div-1 :job description & company name -->
+                    <div class="p-4">
+                        <h1 class="companyName text-[18px] font-semibold text-[#002c5c]">CloudFirst Inc</h1>
+                        <p class="designation text-[16px] font-normal text-[#64748B]">Backend Developer</p>
+                    </div>
+                    <!-- div-02:place & salary -->
+                    <div>
+                        <p class="place p-4 text-sm font-normal text-[#64748B]">
+                            Seattle, WA
+                            <span class="mx-2">.</span>
+                            Full-time
+                            <span>.</span>
+                            $280,000 - $320,000
+                        </p>
+                    </div>
+                    <!-- div-03: current status- interviewed or rejected -->
+                    <div class="px-4">
+                        <!-- ID; currentStatus -->
+                        <button id="currentStatus"
+                            class="currentStatus px-4 w-[122px] h-12  text-sm font-normal text-[#002c5c] bg-[#EEF4FF]">NOT
+                            APPLIED</button>
+                        <p class="description mt-2 text-sm text-[#002c5c]">Design and maintain scalable backend systems
+                            using Python and AWS. Work with modern DevOps practices and cloud infrastructure.
+                        </p>
+                    </div>
+                    <!-- div-04: press btn,interviewed or rejected  -->
+                    <div class="flex p-4 gap-4">
+                        <!-- ID: press-interviewed-btn -->
+                        <BUtton id="press-interviewed-btn"
+                            class="pressInterviewedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#10B981] border border-[#10B981]">INTERVIEW</BUtton>
+
+                        <!-- ID:press-rejected-btn -->
+                        <BUtton id="press-rejected-btn"
+                            class="pressRejectedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#EF4444] border border-[#EF4444]">REJECTED</BUtton>
+
+                    </div>
+                </div>
+
+                <!-- Delete-card-div -->
+                <div>
+                    <button id="delete-btn" class="deleteBtn"><img src="./images/Delete.png" alt=""></button>
+                </div>
+            </div>
+
+            <!-- Card-05 -->
+            <!-- Description-div-forCard -->
+            <div class="card flex justify-between  bg-white p-4 rounded-md">
+                <div>
+                    <!-- div-1 :job description & company name -->
+                    <div class="p-4">
+                        <h1 class="companyName text-[18px] font-semibold text-[#002c5c]">Innovation Labs</h1>
+                        <p class="designation text-[16px] font-normal text-[#64748B]">UI/UX Engineer</p>
+                    </div>
+                    <!-- div-02:place & salary -->
+                    <div>
+                        <p class="place p-4 text-sm font-normal text-[#64748B]">
+                            Austin, TX
+                            <span class="mx-2">.</span>
+                            Full-time
+                            <span>.</span>
+                            $80,000 - $130,000
+                        </p>
+                    </div>
+                    <!-- div-03: current status- interviewed or rejected -->
+                    <div class="px-4">
+                        <!-- ID; currentStatus -->
+                        <button id="currentStatus"
+                            class="currentStatus px-4 w-[122px] h-12  text-sm font-normal text-[#002c5c] bg-[#EEF4FF]">NOT
+                            APPLIED</button>
+                        <p class="description mt-2 text-sm text-[#002c5c]">Create beautiful and functional user
+                            interfaces for our suite of products. Strong design skills and frontend development
+                            expertise required.
+                        </p>
+                    </div>
+                    <!-- div-04: press btn,interviewed or rejected  -->
+                    <div class="flex p-4 gap-4">
+                        <!-- ID: press-interviewed-btn -->
+                        <BUtton id="press-interviewed-btn"
+                            class="pressInterviewedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#10B981] border border-[#10B981]">INTERVIEW</BUtton>
+
+                        <!-- ID:press-rejected-btn -->
+                        <BUtton id="press-rejected-btn"
+                            class="pressRejectedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#EF4444] border border-[#EF4444]">REJECTED</BUtton>
+
+                    </div>
+                </div>
+
+                <!-- Delete-card-div -->
+                <div>
+                    <button id="delete-btn" class="deleteBtn"><img src="./images/Delete.png" alt=""></button>
+                </div>
+            </div>
+
+            <!-- Card-06 -->
+            <!-- Description-div-forCard -->
+            <div class="card flex justify-between  bg-white p-4 rounded-md">
+                <div>
+                    <!-- div-1 :job description & company name -->
+                    <div class="p-4">
+                        <h1 class="companyName text-[18px] font-semibold text-[#002c5c]">MegaCorp Solutions</h1>
+                        <p class="designation text-[16px] font-normal text-[#64748B]">JavaScript Developer</p>
+                    </div>
+                    <!-- div-02:place & salary -->
+                    <div>
+                        <p class="place p-4 text-sm font-normal text-[#64748B]">
+                            New York, NY
+                            <span class="mx-2">.</span>
+                            Full-time
+                            <span>.</span>
+                            $280,000 - $400,000
+                        </p>
+                    </div>
+                    <!-- div-03: current status- interviewed or rejected -->
+                    <div class="px-4">
+                        <!-- ID; currentStatus -->
+                        <button id="currentStatus"
+                            class="currentStatus px-4 w-[122px] h-12  text-sm font-normal text-[#002c5c] bg-[#EEF4FF]">NOT
+                            APPLIED</button>
+                        <p class="description mt-2 text-sm text-[#002c5c]">Build enterprise applications with JavaScript
+                            and modern frameworks. We offer competitive compensation, health insurance, and professional
+                            development opportunities.
+                        </p>
+                    </div>
+                    <!-- div-04: press btn,interviewed or rejected  -->
+                    <div class="flex p-4 gap-4">
+                        <!-- ID: press-interviewed-btn -->
+                        <BUtton id="press-interviewed-btn"
+                            class="pressInterviewedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#10B981] border border-[#10B981]">INTERVIEW</BUtton>
+
+                        <!-- ID:press-rejected-btn -->
+                        <BUtton id="press-rejected-btn"
+                            class="pressRejectedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#EF4444] border border-[#EF4444]">REJECTED</BUtton>
+
+                    </div>
+                </div>
+
+                <!-- Delete-card-div -->
+                <div>
+                    <button id="delete-btn" class="deleteBtn"><img src="./images/Delete.png" alt=""></button>
+                </div>
+            </div>
+
+            <!-- Card-07 -->
+            <!-- Description-div-forCard -->
+            <div class="card flex justify-between  bg-white p-4 rounded-md">
+                <div>
+                    <!-- div-1 :job description & company name -->
+                    <div class="p-4">
+                        <h1 class="companyName text-[18px] font-semibold text-[#002c5c]">StartupXYZ</h1>
+                        <p class="designation text-[16px] font-normal text-[#64748B]">Full Stack Engineer</p>
+                    </div>
+                    <!-- div-02:place & salary -->
+                    <div>
+                        <p class="place p-4 text-sm font-normal text-[#64748B]">
+                            Remote
+                            <span class="mx-2">.</span>
+                            part-time
+                            <span>.</span>
+                            $120,000 - $180,000
+                        </p>
+                    </div>
+                    <!-- div-03: current status- interviewed or rejected -->
+                    <div class="px-4">
+                        <!-- ID; currentStatus -->
+                        <button id="currentStatus"
+                            class="currentStatus px-4 w-[122px] h-12  text-sm font-normal text-[#002c5c] bg-[#EEF4FF]">NOT
+                            APPLIED</button>
+                        <p class="description mt-2 text-sm text-[#002c5c]">Join our fast-growing startup and work on our
+                            core platform. Experience with Node.js and React required. Great benefits and equity package
+                            included.
+                        </p>
+                    </div>
+                    <!-- div-04: press btn,interviewed or rejected  -->
+                    <div class="flex p-4 gap-4">
+                        <!-- ID: press-interviewed-btn -->
+                        <BUtton id="press-interviewed-btn"
+                            class="pressInterviewedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#10B981] border border-[#10B981]">INTERVIEW</BUtton>
+
+                        <!-- ID:press-rejected-btn -->
+                        <BUtton id="press-rejected-btn"
+                            class="pressRejectedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#EF4444] border border-[#EF4444]">REJECTED</BUtton>
+
+                    </div>
+                </div>
+
+                <!-- Delete-card-div -->
+                <div>
+                    <button id="delete-btn" class="deleteBtn"><img src="./images/Delete.png" alt=""></button>
+                </div>
+            </div>
+
+            <!-- Card-08 -->
+            <!-- Description-div-forCard -->
+            <div class="card flex justify-between  bg-white p-4 rounded-md">
+                <div>
+                    <!-- div-1 :job description & company name -->
+                    <div class="p-4">
+                        <h1 class="companyName text-[18px] font-semibold text-[#002c5c]">TechCorp Industries</h1>
+                        <p class="designation text-[16px] font-normal text-[#64748B]">Senior Frontend Developer</p>
+                    </div>
+                    <!-- div-02:place & salary -->
+                    <div>
+                        <p class="place p-4 text-sm font-normal text-[#64748B]">
+                            San Francisco, CA
+                            <span class="mx-2">.</span>
+                            Full-time
+                            <span>.</span>
+                            $130,000 - $175,000
+                        </p>
+                    </div>
+                    <!-- div-03: current status- interviewed or rejected -->
+                    <div class="px-4">
+                        <!-- ID; currentStatus -->
+                        <button id="currentStatus"
+                            class="currentStatus px-4 w-[122px] h-12  text-sm font-normal text-[#002c5c] bg-[#EEF4FF]">NOT
+                            APPLIED</button>
+                        <p class="description mt-2 text-sm text-[#002c5c]">We are looking for an experienced Frontend
+                            Developer to build scalable web applications using React and TypeScript. You will work with
+                            a talented team on cutting-edge projects.
+                        </p>
+                    </div>
+                    <!-- div-04: press btn,interviewed or rejected  -->
+                    <div class="flex p-4 gap-4">
+                        <!-- ID: press-interviewed-btn -->
+                        <BUtton id="press-interviewed-btn"
+                            class="pressInterviewedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#10B981] border border-[#10B981]">INTERVIEW</BUtton>
+
+                        <!-- ID:press-rejected-btn -->
+                        <BUtton id="press-rejected-btn"
+                            class="pressRejectedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#EF4444] border border-[#EF4444]">REJECTED</BUtton>
+
+                    </div>
+                </div>
+
+                <!-- Delete-card-div -->
+                <div>
+                    <button id="delete-btn" class="deleteBtn"><img src="./images/Delete.png" alt=""></button>
+                </div>
+            </div>
+
+
 
         </section>
     </main>
