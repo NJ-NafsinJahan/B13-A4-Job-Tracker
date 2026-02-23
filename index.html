@@ -17,28 +17,100 @@
     </style>
 </head>
 
-<body class="min-h-screen max-w-[1110px] border mx-auto">
+<body class="min-h-screen max-w-[1110px] border mx-auto bg-gray-100">
+    <!-- header dashboard -->
     <header>
-        <h1 class="text-4xl font-bold text-[#002c5c] ">Job Application Tracker</h1>
+        <h1 class="text-4xl font-bold text-[#002c5c] mt-8 mb-4">Job Application Tracker</h1>
         <div class=" grid grid-cols-3 gap-8">
             <!-- ID: totalCount -->
-            <div class=" bg-[#f1f2f4] p-4">
-                <p class="text-[14px] font-medium text-[#323b49]">Total</p>
+            <div class=" bg-white p-4 rounded-md">
+                <p class="text-[14px] font-medium text-[#323b49] ">Total</p>
                 <p id="totalCount" class="text-2xl font-bold text-[#002c5c]">0</p>
             </div>
             <!--ID: interviewCount -->
-            <div class=" bg-[#f1f2f4]">
+            <div class=" bg-white p-4 rounded-md">
                 <p class="text-[14px] font-medium text-[#323b49]">Interview</p>
                 <p id="interviewCount" class="text-2xl font-bold text-[#10B981]">0</p>
             </div>
             <!--ID: rejectedCount -->
-            <div class=" bg-[#f1f2f4]">
+            <div class=" bg-white p-4 rounded-md">
                 <p class="text-[14px] font-medium text-[#323b49]">Rejected</p>
                 <p id="rejectedCount" class="text-2xl font-bold text-[#EF4444]">0</p>
             </div>
         </div>
-
+        <hr class="border-gray-300 my-4">
     </header>
+    <main>
+        <!-- Available jobs -->
+        <section class="flex justify-between p-4">
+            <p class="font-semibold text-xl text-[#002c5c] ">Available Jobs</p>
+            <!-- ID:availableJobs  -->
+            <div class="flex gap-1 ">
+                <p id="availableJobs" class="text-[#64748B] text-[16px] font-medium">0</p>
+                <p class="text-[#64748B] text-[16px] font-medium"> jobs</p>
+            </div>
+        </section>
+        <!-- Buttons: All, Interview, Rejected -->
+        <Section>
+            <div class="flex p-4 gap-3">
+                <!-- ID: all-btn -->
+                <button id="all-btn"
+                    class="px-5 py-2 w-20 h-8 rounded-md text-xs font-semibold text-amber-50 bg-[#3B82F6]">All</button>
+                <!-- ID: interview-btn -->
+                <button id="interview-btn"
+                    class="py-2 w-20 h-8 rounded-md text-xs font-semibold text-gray-400 bg-white">Interview</button>
+                <!-- ID: rejected-btn  -->
+                <button id="rejected-btn"
+                    class="py-2 w-20 h-8 rounded-md text-xs font-semibold text-gray-400 bg-white">Rejected</button>
+            </div>
+        </Section>
+
+        <!-- Card Section -->
+        <section class="p-4">
+            <!-- Card-01 -->
+            <!-- Description-div-forCard -->
+            <div class="flex justify-between  bg-white p-4 rounded-md">
+                <div>
+                    <!-- div-1 -->
+                    <div class="p-4">
+                        <h1 class="text-[18px] font-semibold text-[#002c5c]">Mobile First Corp</h1>
+                        <p class="text-[16px] font-normal text-[#64748B]">React Native Developer</p>
+                    </div>
+                    <!-- div-02 -->
+                    <div>
+                        <p class="p-4 text-sm font-normal text-[#64748B]">
+                            Los Angeles, CA
+                            <span class="mx-2">.</span>
+                            Part-time
+                            <span>.</span>
+                            $80,000 - $120,000
+                        </p>
+                    </div>
+                    <!-- div-03 -->
+                    <div class="px-4">
+                        <button class="px-4 w-[122px] h-12  text-sm font-normal text-[#002c5c] bg-[#EEF4FF]">NOT
+                            APPLIED</button>
+                        <p class="mt-2 text-sm text-[#002c5c]">Create stunning web experiences for high-profile clients.
+                            Must have portfolio and
+                            experience with modern web design trends.</p>
+                    </div>
+                    <!-- div-04 -->
+                    <div class="flex p-4 gap-4">
+                        <BUtton
+                            class="px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#10B981] border border-[#10B981]">INTERVIEW</BUtton>
+                        <BUtton
+                            class="px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#EF4444] border border-[#EF4444]">REJECTED</BUtton>
+
+                    </div>
+                </div>
+
+                <!-- Delete-card-div -->
+                <div>
+                    <button><img src="./images/Delete.png" alt=""></button>
+                </div>
+            </div>
+        </section>
+    </main>
 
 </body>
 
