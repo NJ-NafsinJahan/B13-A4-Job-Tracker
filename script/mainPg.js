@@ -100,6 +100,21 @@ function renderFiltered(type) {
     updateDashboard();
 }
 
+document.addEventListener('click', function(event){
+    const target = event.target;
+    const card = target.closest('.card');
+    if (!card) return;
+
+    // Card theke data neya
+    const cardInfo = {
+        companyName: card.querySelector('.companyName').innerText,
+        designation: card.querySelector('.designation').innerText,
+        place: card.querySelector('.place').innerText,
+        description: card.querySelector('.description').innerText
+    };
+
+})
+
 //let allBtn = document.getElementById('all-btn');
 //allBtn.addEventListener('click', function(){
 // alert('click from all btn');
