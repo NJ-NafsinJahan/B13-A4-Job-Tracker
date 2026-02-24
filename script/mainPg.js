@@ -1,46 +1,39 @@
-console.log('main page added by js')
-// empty array for interviewCount & rejectedCount count
-let interviewCountList = []
-let rejectedCountList = []
+
+// empty array for interview count & rejected count 
+let interviewList = []
+let rejectedList = []
 
 // Get dashboard element
 let totalCount = document.getElementById('totalCount');
 let interviewCount = document.getElementById('interviewCount');
 let rejectedCount = document.getElementById('rejectedCount');
 
+
 // Get Buttons: All, Interview, Rejected
 let allBtn = document.getElementById('all-btn');
 let interviewBtn = document.getElementById('interview-btn');
 let rejectedBtn = document.getElementById('rejected-btn');
 
-// get empty filteredCard section
-let filteredCard = document.getElementById('filteredCard');
+// Get cards
+const allCardContainer = document.getElementById('allCards');
+const filteredCardContainer = document.getElementById('filteredCard');
 
-// calculate totalCount, interviewCount 
-let calculateAllCard = document.getElementById('allCards');
+// for update Dashboard
+function updateDashboard() {
+    const totalJobs = allCardsContainer.querySelectorAll('.card').length;
+    totalCount.innerText = totalJobs;
+    interviewCount.innerText = interviewList.length;
+    rejectedCount.innerText = rejectedList.length;
 
-const mainContainer = document.querySelector('main');
-console.log(mainContainer);
+    if (!filteredCardContainer.classList.contains('hidden')){
+        availableJobs.innerText = filteredCardContainer.querySelectorAll('.card').length;
+    }else{
+        availableJobs.innerText = totalJobs;
+    }
+}    
 
-// push list into interviewCountList & rejectedCountList
-interviewCountList.push()
 
-function calculateTotalCount(){
-totalCount.innerText = calculateAllCard.children.length; 
-interviewCount.innerText = interviewCountList.length;
-rejectedCount.innerText = rejectedCountList.length;
-}
-calculateTotalCount();
-
-// available Jobs
-let availableJobs= document.getElementById('availableJobs');
-
-function calculateAvailableJobs (){
-availableJobs.innerText=calculateAllCard.children.length;
-}
-calculateAvailableJobs();
-
-// toggleStyle
+// toggle style 
 
 function toggleStyle(id){
     // remove btn color
@@ -51,114 +44,66 @@ rejectedBtn.classList.remove('text-amber-50' ,'bg-[#3B82F6]');
 allBtn.classList.add( 'text-gray-400', 'bg-white');
 interviewBtn.classList.add('text-gray-400', 'bg-white');
 rejectedBtn.classList.add('text-gray-400', 'bg-white');
-   // for selected btn
+
+// for selected btn
+// adding '3B82F6' color for selected btn
 let selected = document.getElementById(id);
-// console.log(selected);
-  // adding '3B82F6' color for selected btn
 selected.classList.remove('text-gray-400', 'bg-white');
-selected.classList.add('text-amber-50','bg-[#3B82F6]' );
-}
-      // rendering for interview
-mainContainer.addEventListener('click', function(event){
-    console.log(event.target.classList.contains('pressInterviewedBtn'));
-if (event.target.classList.contains('pressInterviewedBtn')){
-    
-    const parentNode = event.target.parentNode.parentNode
-
-    const companyName = parentNode.querySelector('.companyName').innerText;
-    const designation = parentNode.querySelector('.designation').innerText;
-    const place = parentNode.querySelector('.place').innerText;
-    const currentStatus = parentNode.querySelector('.currentStatus').innerText;
-    const description = parentNode.querySelector('.description').innerText;
-    const pressInterviewedBtn = parentNode.querySelector('.pressInterviewedBtn').innerText;
-    const pressRejectedBtn = parentNode.querySelector('.pressRejectedBtn').innerText;
-    // const deleteBtn = parentNode.querySelector('.deleteBtn').scr;
-
-    // console.log(companyName,designation,place,currentStatus,description,pressInterviewedBtn,pressRejectedBtn);
-
-    const cardInfo={
-        companyName,
-        designation,
-        place,
-        currentStatus,
-        description,pressInterviewedBtn,pressRejectedBtn
-    }
-    console.log(cardInfo);
-let interviewCall = interviewCountList.find(i=>i.companyName === cardInfo.companyName);
-if (!interviewCall){
-    interviewCountList.push(cardInfo);
-}
-renderInterview();
+selected.classList.add('text-amber-50', 'bg-[#3B82F6]');
+// console.log(selected);
+if (id ==='all-btn'){
+    allCardsContainer.classList.remove('hidden');
+    filteredCardContainer.classList.add('hidden');
+}else{
 
 }
-// console.log(interviewCountList);
-})
+updateDashboard();
+}
 
-// Add filteredCard 
-function renderInterview (){
-    filteredCard.innerHTML = ''
+// rendering for interview
+function renderFiltered(type) {
+    filteredCardContainer.innerHTML = '';
+    const list = (type === 'interview') ? interviewList : rejectedList;
 
-    for (interview of interviewCountList){
-        // console.log(interview);
-        let div = document.createElement('div')
-        div.className='card flex justify-between  bg-white p-4 rounded-md'
-        div.innerHTML = `
-                    <div class="card flex justify-between  bg-white p-4 rounded-md">
+    if (list.length === 0) {
+        filteredCardContainer.innerHTML = `
+            <div class="col-span-full text-center py-10">
+                <img src="./images/jobs.png" class="w-20 mx-auto  mb-4">
+                <p class="text-gray-600 font-medium">No jobs Available</p>
+                <p class="text-gray-400 text-sm">Keep applying to see data here!</p>
+            </div>`;
+    } else {
+        list.forEach((job, index) => {
+            const div = document.createElement('div');
+            div.className = 'card flex justify-between bg-white p-4 rounded-md shadow-sm';
+            div.innerHTML = `
                 <div>
-                    <!-- div-1 :job description & company name -->
                     <div class="p-4">
-                        <h1 class="companyName text-[18px] font-semibold text-[#002c5c]">Mobile First Corp</h1>
-                        <p class="designation text-[16px] font-normal text-[#64748B]">React Native Developer</p>
+                        <h1 class="companyName text-[18px] font-semibold text-[#002c5c]">${job.companyName}</h1>
+                        <p class="designation text-[16px] font-normal text-[#64748B]">${job.designation}</p>
                     </div>
-                    <!-- div-02:place & salary -->
-                    <div>
-                        <p class="place p-4 text-sm font-normal text-[#64748B]">
-                            Los Angeles, CA
-                            <span class="mx-2">.</span>
-                            Part-time
-                            <span>.</span>
-                            $80,000 - $120,000
-                        </p>
+                    <div class="px-4 py-2">
+                        <p class="place text-sm font-normal text-[#64748B]">${job.place}</p>
+                        <p class="mt-2 text-sm text-[#002c5c]">${job.description}</p>
                     </div>
-                    <!-- div-03: current status- interviewed or rejected -->
                     <div class="px-4">
-                        <!-- ID; currentStatus -->
-                        <button id="currentStatus"
-                            class="currentStatus px-4 w-[122px] h-12  text-sm font-normal text-[#002c5c] bg-[#EEF4FF]">NOT
-                            APPLIED</button>
-                        <p class="description mt-2 text-sm text-[#002c5c]">Create stunning web experiences for
-                            high-profile clients.
-                            Must have portfolio and
-                            experience with modern web design trends.</p>
-                    </div>
-                    <!-- div-04: press btn,interviewed or rejected  -->
-                    <div class="flex p-4 gap-4">
-                        <!-- ID: press-interviewed-btn -->
-                        <BUtton id="press-interviewed-btn"
-                            class="pressInterviewedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#10B981] border border-[#10B981]">INTERVIEW</BUtton>
-
-                        <!-- ID:press-rejected-btn -->
-                        <BUtton id="press-rejected-btn"
-                            class="pressRejectedBtn px-4 w-[122px] h-12  rounded-md  text-sm font-bold text-[#EF4444] border border-[#EF4444]">REJECTED</BUtton>
-
+                        <button class="px-4 py-2 text-sm font-bold text-white rounded ${type === 'interview' ? 'bg-[#10B981]' : 'bg-[#EF4444]'}">
+                            ${type.toUpperCase()}
+                        </button>
+                        
                     </div>
                 </div>
-
-                <!-- Delete-card-div -->
-                <div>
-                    <button id="delete-btn" class="deleteBtn"><img src="./images/Delete.png" alt=""></button>
-                </div>
-            </div>
-        `
+            `;
+            filteredCardContainer.appendChild(div);
+        });
     }
+    updateDashboard();
 }
 
-
-// let allBtn = document.getElementById('all-btn');
-// allBtn.addEventListener('click', function(){
-//     alert('click from all btn');
-// })
-
+//let allBtn = document.getElementById('all-btn');
+//allBtn.addEventListener('click', function(){
+// alert('click from all btn');
+//})
 
 
 
